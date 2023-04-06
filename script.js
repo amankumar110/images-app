@@ -26,15 +26,14 @@ async function getImages() {
 }
 
 async function showImages() {
-  loader.style.display = "block";
   const images = await getImages();
-//   loader.style.display = "none";
   if (images !== null) {
     for (const img of images) {
-      const imgUrl = isMobileDevice ? img.urls.small : img.urls.regular;
-      const html = `<img class="border" src=${imgUrl} alt="">`;
-
-      container.insertAdjacentHTML("beforeend", html);
+      const imgUrl = isMobileDevice ? img.urls.regular : img.urls.regular;
+      const html = document.createElement("img");
+      html.src = imgUrl;
+      container.insertAdjacentElement("beforeend", html);
+      html.classList.add("border");
     }
   }
 }

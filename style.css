@@ -26,18 +26,19 @@ body {
   border: 1px solid black;
   margin-bottom: 30px;
 }
-img {
+.container img {
   display: block;
   width: 50%;
   max-height: 100%;
   margin-bottom: 30px;
-  animation: boxshadow 3s ease-in 0.3s infinite forwards ;
+  animation: boxshadow 3s ease-in 0.3s infinite forwards;
   border-radius: 10px;
   border: none;
   transition: 0.4s ease-in;
 }
-img.border{
-  border: 1px solid black!important;
+
+img.border {
+  border: 1px solid black !important;
 }
 #loader {
   width: 75px;
@@ -46,12 +47,13 @@ img.border{
   border: 0;
   margin: 20px auto;
 }
+
 .show {
   display: block !important;
 }
 
 @media screen and (max-width: 650px) {
-  img {
+  .container img {
     width: 100%;
   }
   #loader {
@@ -59,11 +61,11 @@ img.border{
   }
 }
 @keyframes boxshadow {
-    0%{
-        box-shadow: 10px 12px  20px cyan;
-    };
+  0% {
+    box-shadow: 10px 12px 20px cyan;
+  }
 
-    100%{
-        box-shadow: 10px 6px 20px cyan;
-    }
+  100% {
+    box-shadow: 10px 6px 20px cyan;
+  }
 }
