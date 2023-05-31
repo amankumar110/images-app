@@ -51,16 +51,22 @@ function createLikeContainer(){
   div.classList.add("likediv");
   const ratinginfo = "Rate this image";
   div.append(ratinginfo);
-  const select = document.createElement("select");
-  select.value = "Rate";
-  div.appendChild(select);
-  for (let i = 1; i < 6; i++) {
-    const option = document.createElement("option");
-    option.textContent = i ;
-    option.value = i;
-    select.appendChild(option);
-  }
-  return div;
+  const selectDiv = document.createElement("div");
+selectDiv.innerHTML  = 
+    `
+    <select name="" id="">
+    <option value="Rate">Rate</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+    <div class="selecticon"><i class="fa-solid fa-chevron-down"></i></div>
+    `
+ selectDiv.classList.add("selectdiv");
+ div.appendChild(selectDiv);
+ return div;
 }
 function update_page_count() {
   setTimeout(() => {
